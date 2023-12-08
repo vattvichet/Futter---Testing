@@ -56,16 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
           children: <Widget>[
             TextField(
+              key: const Key('textFieldKey'),
               controller: textInput,
-              onChanged: (value) {
-                setState(() {});
-              },
             ),
             const SizedBox(
               height: 30,
             ),
             Text(
-             reverseString(textInput.text) ,
+              reverseString(textInput.text),
             ),
             const SizedBox(
               height: 30,
@@ -74,7 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  key: const Key('reverseButtonKey'),
+                  onPressed: () {
+                    setState(() {});
+                  },
                   child: const Center(
                     child: Text("Reverse"),
                   ),
